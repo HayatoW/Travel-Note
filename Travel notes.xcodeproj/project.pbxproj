@@ -16,6 +16,9 @@
 		4A56228628D7F1B600202A0E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228428D7F1B600202A0E /* awsconfiguration.json */; };
 		4A56228828D7F24700202A0E /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56228728D7F24700202A0E /* Backend.swift */; };
 		4A56228B28D7FA1400202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */; };
+		4A56229C28D835DD00202A0E /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229928D835DD00202A0E /* NoteData.swift */; };
+		4A56229D28D835DD00202A0E /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229A28D835DD00202A0E /* AmplifyModels.swift */; };
+		4A56229E28D835DD00202A0E /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229B28D835DD00202A0E /* NoteData+Schema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		4A56228428D7F1B600202A0E /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		4A56228728D7F24700202A0E /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		4A56228C28D80D8200202A0E /* Travel-notes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Travel-notes-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4A56229928D835DD00202A0E /* NoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
+		4A56229A28D835DD00202A0E /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
+		4A56229B28D835DD00202A0E /* NoteData+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NoteData+Schema.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		4A56226E28D7EC6200202A0E /* Travel notes */ = {
 			isa = PBXGroup;
 			children = (
+				4A56229728D835DD00202A0E /* generated */,
 				4A56228C28D80D8200202A0E /* Travel-notes-Info.plist */,
 				4A56226F28D7EC6200202A0E /* Travel_notesApp.swift */,
 				4A56227128D7EC6200202A0E /* ContentView.swift */,
@@ -80,6 +87,25 @@
 				4A56227628D7EC6200202A0E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A56229728D835DD00202A0E /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				4A56229828D835DD00202A0E /* models */,
+			);
+			name = generated;
+			path = amplify/generated;
+			sourceTree = SOURCE_ROOT;
+		};
+		4A56229828D835DD00202A0E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4A56229928D835DD00202A0E /* NoteData.swift */,
+				4A56229A28D835DD00202A0E /* AmplifyModels.swift */,
+				4A56229B28D835DD00202A0E /* NoteData+Schema.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A56229E28D835DD00202A0E /* NoteData+Schema.swift in Sources */,
+				4A56229D28D835DD00202A0E /* AmplifyModels.swift in Sources */,
 				4A56227228D7EC6200202A0E /* ContentView.swift in Sources */,
+				4A56229C28D835DD00202A0E /* NoteData.swift in Sources */,
 				4A56228828D7F24700202A0E /* Backend.swift in Sources */,
 				4A56227028D7EC6200202A0E /* Travel_notesApp.swift in Sources */,
 			);

@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "travelnotes",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtravelnotesdc9a2848",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
