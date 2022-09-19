@@ -12,6 +12,8 @@
 		4A56227428D7EC6200202A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227328D7EC6200202A0E /* Assets.xcassets */; };
 		4A56227728D7EC6200202A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227628D7EC6200202A0E /* Preview Assets.xcassets */; };
 		4A56228228D7F0C600202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228128D7F0C600202A0E /* Amplify */; };
+		4A56228528D7F1B600202A0E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228328D7F1B600202A0E /* amplifyconfiguration.json */; };
+		4A56228628D7F1B600202A0E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228428D7F1B600202A0E /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		4A56227128D7EC6200202A0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A56227328D7EC6200202A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A56227628D7EC6200202A0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A56228328D7F1B600202A0E /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		4A56228428D7F1B600202A0E /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,8 @@
 		4A56226328D7EC6200202A0E = {
 			isa = PBXGroup;
 			children = (
+				4A56228328D7F1B600202A0E /* amplifyconfiguration.json */,
+				4A56228428D7F1B600202A0E /* awsconfiguration.json */,
 				4A56226E28D7EC6200202A0E /* Travel notes */,
 				4A56226D28D7EC6200202A0E /* Products */,
 			);
@@ -133,7 +139,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A56228628D7F1B600202A0E /* awsconfiguration.json in Resources */,
 				4A56227728D7EC6200202A0E /* Preview Assets.xcassets in Resources */,
+				4A56228528D7F1B600202A0E /* amplifyconfiguration.json in Resources */,
 				4A56227428D7EC6200202A0E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
