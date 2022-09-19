@@ -4,7 +4,7 @@
 <dict>
 	<key>CFBundleURLSchemes</key>
 	<array>
-		<string>gettingstarted</string>
+		<string>travelnote</string>
 	</array>
 </dict>
 </plist>
