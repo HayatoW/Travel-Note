@@ -109,7 +109,7 @@ class Backend {
         }
     }
     
-    // MARK: API Access
+    // MARK: - API Access
     
     func queryNotes() {
         _ = Amplify.API.query(request: .list(NoteData.self)) { event in
@@ -168,6 +168,41 @@ class Backend {
                 }
             case .failure(let error):
                 print("Got failed event with error \(error)")
+            }
+        }
+    }
+    
+    // MARK: - Image Storage
+    func storeImage(name: String, image: Data) {
+        let _ = Amplify.Storage.uploadData(key: name, data: image) { event in
+            switch event {
+            case .success(let data):
+                print("Image upload completed: \(data)")
+            case .failure(let storageError):
+                print("Image upload failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+            }
+        }
+    }
+    
+    func retrieveImage(name: String, completed: @escaping (Data) -> Void) {
+        let _ = Amplify.Storage.downloadData(key: name) { event in
+            switch event {
+            case let .success(data):
+                print("Image \(name) loaded")
+                completed(data)
+            case let .failure(storageError):
+                print("Can not download image: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+            }
+        }
+    }
+    
+    func deleteImage(name: String) {
+        let _ = Amplify.Storage.remove(key: name) { event in
+            switch event {
+            case let .success(data):
+                print("Image \(data) deleted")
+            case let .failure(storageError):
+                print("Can not delete image: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
             }
         }
     }
