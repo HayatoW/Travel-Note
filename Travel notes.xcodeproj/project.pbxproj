@@ -17,9 +17,10 @@
 		4A56229C28D835DD00202A0E /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229928D835DD00202A0E /* NoteData.swift */; };
 		4A56229D28D835DD00202A0E /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229A28D835DD00202A0E /* AmplifyModels.swift */; };
 		4A56229E28D835DD00202A0E /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229B28D835DD00202A0E /* NoteData+Schema.swift */; };
-		4A5622A128D838FE00202A0E /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A028D838FE00202A0E /* AWSAPIPlugin */; };
-		4A5622A328D838FE00202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */; };
-		4A5622A528D838FE00202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A428D838FE00202A0E /* Amplify */; };
+		4A5622A828D89A2700202A0E /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A728D89A2700202A0E /* AWSAPIPlugin */; };
+		4A5622AA28D89A2700202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A928D89A2700202A0E /* AWSCognitoAuthPlugin */; };
+		4A5622AC28D89A2700202A0E /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622AB28D89A2700202A0E /* AWSS3StoragePlugin */; };
+		4A5622AE28D89A2700202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622AD28D89A2700202A0E /* Amplify */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5622A528D838FE00202A0E /* Amplify in Frameworks */,
-				4A5622A128D838FE00202A0E /* AWSAPIPlugin in Frameworks */,
-				4A5622A328D838FE00202A0E /* AWSCognitoAuthPlugin in Frameworks */,
+				4A5622A828D89A2700202A0E /* AWSAPIPlugin in Frameworks */,
+				4A5622AE28D89A2700202A0E /* Amplify in Frameworks */,
+				4A5622AA28D89A2700202A0E /* AWSCognitoAuthPlugin in Frameworks */,
+				4A5622AC28D89A2700202A0E /* AWSS3StoragePlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +129,10 @@
 			);
 			name = "Travel notes";
 			packageProductDependencies = (
-				4A5622A028D838FE00202A0E /* AWSAPIPlugin */,
-				4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */,
-				4A5622A428D838FE00202A0E /* Amplify */,
+				4A5622A728D89A2700202A0E /* AWSAPIPlugin */,
+				4A5622A928D89A2700202A0E /* AWSCognitoAuthPlugin */,
+				4A5622AB28D89A2700202A0E /* AWSS3StoragePlugin */,
+				4A5622AD28D89A2700202A0E /* Amplify */,
 			);
 			productName = "Travel notes";
 			productReference = 4A56226C28D7EC6200202A0E /* Travel notes.app */;
@@ -160,7 +163,7 @@
 			);
 			mainGroup = 4A56226328D7EC6200202A0E;
 			packageReferences = (
-				4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
 			);
 			productRefGroup = 4A56226D28D7EC6200202A0E /* Products */;
 			projectDirPath = "";
@@ -398,7 +401,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+		4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
 			requirement = {
@@ -409,19 +412,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4A5622A028D838FE00202A0E /* AWSAPIPlugin */ = {
+		4A5622A728D89A2700202A0E /* AWSAPIPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = AWSAPIPlugin;
 		};
-		4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */ = {
+		4A5622A928D89A2700202A0E /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = AWSCognitoAuthPlugin;
 		};
-		4A5622A428D838FE00202A0E /* Amplify */ = {
+		4A5622AB28D89A2700202A0E /* AWSS3StoragePlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSS3StoragePlugin;
+		};
+		4A5622AD28D89A2700202A0E /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A5622A628D89A2700202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = Amplify;
 		};
 /* End XCSwiftPackageProductDependency section */

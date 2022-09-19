@@ -9,6 +9,7 @@ import UIKit
 import Amplify
 import AWSCognitoAuthPlugin
 import AWSAPIPlugin
+import AWSS3StoragePlugin
 
 class Backend {
     static let shared = Backend()
@@ -20,6 +21,7 @@ class Backend {
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
+            try Amplify.add(plugin: AWSS3StoragePlugin())
             try Amplify.configure()
             print("Initialized Amplify")
         } catch  {

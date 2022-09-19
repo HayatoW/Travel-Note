@@ -1,0 +1,14 @@
+{
+  "resourceName": "image",
+  "policyUUID": "39437e01",
+  "bucketName": "travelnotesa717f0760b44403997b944cbdfc0a2bf",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
