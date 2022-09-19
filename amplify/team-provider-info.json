@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-travelnotes-dev-91755-authRole",
+      "UnauthRoleArn": "arn:aws:iam::105347989254:role/amplify-travelnotes-dev-91755-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::105347989254:role/amplify-travelnotes-dev-91755-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-travelnotes-dev-91755-deployment",
+      "UnauthRoleName": "amplify-travelnotes-dev-91755-unauthRole",
+      "StackName": "amplify-travelnotes-dev-91755",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:105347989254:stack/amplify-travelnotes-dev-91755/82612610-37b0-11ed-81d8-068f8c77a7df",
+      "AmplifyAppId": "dss6hraih4l51"
+    }
+  }
+}
