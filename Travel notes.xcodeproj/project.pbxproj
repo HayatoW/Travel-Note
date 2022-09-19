@@ -130,7 +130,6 @@
 			mainGroup = 4A56226328D7EC6200202A0E;
 			packageReferences = (
 				4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
-				4A56228928D7FA1400202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
 			);
 			productRefGroup = 4A56226D28D7EC6200202A0E /* Products */;
 			projectDirPath = "";
@@ -364,14 +363,6 @@
 
 /* Begin XCRemoteSwiftPackageReference section */
 		4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		4A56228928D7FA1400202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
 			requirement = {
