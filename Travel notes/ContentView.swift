@@ -34,6 +34,17 @@ class Note: Identifiable, ObservableObject {
     convenience init(from data: NoteData) {
         self.init(id: data.id, name: data.name, description: data.description, imageName: data.image)
         
+        if let name = self.imageName {
+            // asynchronously download the image
+            Backend.shared.retrieveImage(name: name) { data in
+                // update the UI on the main thread
+                DispatchQueue.main.async() {
+                    let uim = UIImage(data: data)
+                    self.image = Image(uiImage: uim!)
+                }
+            }
+        }
+        
         // store API object for easy retrieval later
         self._data = data
     }
