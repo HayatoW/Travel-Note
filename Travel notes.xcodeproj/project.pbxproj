@@ -11,14 +11,15 @@
 		4A56227228D7EC6200202A0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56227128D7EC6200202A0E /* ContentView.swift */; };
 		4A56227428D7EC6200202A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227328D7EC6200202A0E /* Assets.xcassets */; };
 		4A56227728D7EC6200202A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227628D7EC6200202A0E /* Preview Assets.xcassets */; };
-		4A56228228D7F0C600202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228128D7F0C600202A0E /* Amplify */; };
 		4A56228528D7F1B600202A0E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228328D7F1B600202A0E /* amplifyconfiguration.json */; };
 		4A56228628D7F1B600202A0E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228428D7F1B600202A0E /* awsconfiguration.json */; };
 		4A56228828D7F24700202A0E /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56228728D7F24700202A0E /* Backend.swift */; };
-		4A56228B28D7FA1400202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */; };
 		4A56229C28D835DD00202A0E /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229928D835DD00202A0E /* NoteData.swift */; };
 		4A56229D28D835DD00202A0E /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229A28D835DD00202A0E /* AmplifyModels.swift */; };
 		4A56229E28D835DD00202A0E /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56229B28D835DD00202A0E /* NoteData+Schema.swift */; };
+		4A5622A128D838FE00202A0E /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A028D838FE00202A0E /* AWSAPIPlugin */; };
+		4A5622A328D838FE00202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */; };
+		4A5622A528D838FE00202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5622A428D838FE00202A0E /* Amplify */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A56228228D7F0C600202A0E /* Amplify in Frameworks */,
-				4A56228B28D7FA1400202A0E /* AWSCognitoAuthPlugin in Frameworks */,
+				4A5622A528D838FE00202A0E /* Amplify in Frameworks */,
+				4A5622A128D838FE00202A0E /* AWSAPIPlugin in Frameworks */,
+				4A5622A328D838FE00202A0E /* AWSCognitoAuthPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +127,9 @@
 			);
 			name = "Travel notes";
 			packageProductDependencies = (
-				4A56228128D7F0C600202A0E /* Amplify */,
-				4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */,
+				4A5622A028D838FE00202A0E /* AWSAPIPlugin */,
+				4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */,
+				4A5622A428D838FE00202A0E /* Amplify */,
 			);
 			productName = "Travel notes";
 			productReference = 4A56226C28D7EC6200202A0E /* Travel notes.app */;
@@ -157,7 +160,7 @@
 			);
 			mainGroup = 4A56226328D7EC6200202A0E;
 			packageReferences = (
-				4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
 			);
 			productRefGroup = 4A56226D28D7EC6200202A0E /* Products */;
 			projectDirPath = "";
@@ -395,7 +398,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+		4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
 			requirement = {
@@ -406,15 +409,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4A56228128D7F0C600202A0E /* Amplify */ = {
+		4A5622A028D838FE00202A0E /* AWSAPIPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
-			productName = Amplify;
+			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSAPIPlugin;
 		};
-		4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */ = {
+		4A5622A228D838FE00202A0E /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = AWSCognitoAuthPlugin;
+		};
+		4A5622A428D838FE00202A0E /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A56229F28D838FE00202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = Amplify;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
