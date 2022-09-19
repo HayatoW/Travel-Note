@@ -66,10 +66,46 @@ struct ContentView: View {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some View {
-        List {
-            ForEach(userData.notes) { note in
-                ListRow(note: note)
+        ZStack {
+            if (userData.isSingnedIn) {
+                NavigationView {
+                    List {
+                        ForEach(userData.notes) { note in
+                            ListRow(note: note)
+                        }
+                    }
+                    .navigationBarTitle(Text("Notes"))
+                    .navigationBarItems(leading: SignOutButton())
+                }
+            } else {
+                SignInButton()
             }
+        }
+    }
+}
+
+struct SignInButton: View {
+    var body: some View {
+        Button(action: { Backend.shared.signIn() }) {
+            HStack {
+                Image(systemName: "person.fill")
+                    .scaleEffect(1.5)
+                    .padding()
+                Text("Sign In")
+                    .font(.largeTitle)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(.green)
+            .cornerRadius(30)
+        }
+    }
+}
+
+struct SignOutButton: View {
+    var body: some View {
+        Button(action: { Backend.shared.signOut() }) {
+            Text("Sign Out")
         }
     }
 }
