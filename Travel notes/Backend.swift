@@ -46,6 +46,18 @@ class Backend {
                 break
             }
         }
+        
+        // let's check if user is signed in or not
+        _ = Amplify.Auth.fetchAuthSession { result in
+            do {
+                let session = try result.get()
+                
+                // let's update UserData and the UI
+                self.updateUserData(withSignInStatus: session.isSignedIn)
+            } catch {
+                print("Fetch auth session failed with error - \(error)")
+            }
+        }
     }
     
     // MARK: - User Authentication
