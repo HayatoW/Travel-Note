@@ -64,12 +64,23 @@ struct ListRow: View {
 struct ContentView: View {
     @ObservedObject private var userData: UserData = .shared
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some View {
         List {
             ForEach(userData.notes) { note in
                 ListRow(note: note)
             }
         }
+    }
+}
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        // initialize Amplify
+        let _ = Backend.initialize()
+        
+        return true
     }
 }
 
