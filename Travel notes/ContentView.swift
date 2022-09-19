@@ -165,7 +165,8 @@ struct AddNoteView: View {
     
     @State var name = "New Note"
     @State var description = "This is a new note"
-    @State var imageName = "image"
+    @State var image: UIImage?
+    @State var showCaptureImageView = false
     
     var body: some View {
         Form {
@@ -175,20 +176,48 @@ struct AddNoteView: View {
             }
             
             Section(header: Text("PICTURE")) {
-                TextField("Name", text: $imageName)
+                VStack {
+                    Button(action: {
+                        self.showCaptureImageView.toggle()
+                    }) {
+                        Text("Choose photo")
+                    }.sheet(isPresented: $showCaptureImageView) {
+                        CaptureImageView(isShown: self.$showCaptureImageView, image: self.$image)
+                    }
+                    if (image != nil) {
+                        HStack {
+                            Spacer()
+                            Image(uiImage: image!)
+                                .resizable()
+                                .frame(width: 250, height: 200)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(.white, lineWidth: 4))
+                                .shadow(radius: 10)
+                            Spacer()
+                        }
+                    }
+                }
             }
             
             Section {
                 Button(action: {
                     self.isPresented = false
-                    let noteData = NoteData(id: UUID().uuidString, name: self.$name.wrappedValue, description: self.$description.wrappedValue)
-                    let note = Note(from: noteData)
+                    
+                    let note = Note(id: UUID().uuidString, name: self.$name.wrappedValue, description: self.$description.wrappedValue)
+                    
+                    if let i = self.image {
+                        note.imageName = UUID().uuidString
+                        note.image = Image(uiImage: i)
+                        
+                        // asynchronously store the image (and assume it will work)
+                        Backend.shared.storeImage(name: note.imageName!, image: (i.pngData())!)
+                    }
                     
                     // asynchronously store the note (and assume it will succeed)
                     Backend.shared.createNote(note: note)
                     
                     // add the new note in our userdata, this will refresh UI
-                    self.userData.notes.append(note)
+                    withAnimation { self.userData.notes.append(note) }
                 }) {
                     Text("Create this note")
                 }
