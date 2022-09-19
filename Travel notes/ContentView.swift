@@ -95,6 +95,14 @@ struct ContentView: View {
                     List {
                         ForEach(userData.notes) { note in
                             ListRow(note: note)
+                        }.onDelete { indices in
+                            indices.forEach {
+                                // removing from user data will refresh UI
+                                let note = self.userData.notes.remove(at: $0)
+                                
+                                // asynchronously remove from database
+                                Backend.shared.deleteNote(note: note)
+                            }
                         }
                     }
                     .navigationBarTitle(Text("Notes"))
