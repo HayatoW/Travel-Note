@@ -82,6 +82,12 @@ struct ListRow: View {
 struct ContentView: View {
     @ObservedObject private var userData: UserData = .shared
     
+    @State var showCreateNote = false
+    
+    @State var name = "New Note"
+    @State var description = "This is a new note"
+    @State var imageName = "image"
+    
     var body: some View {
         ZStack {
             if (userData.isSingnedIn) {
@@ -92,7 +98,14 @@ struct ContentView: View {
                         }
                     }
                     .navigationBarTitle(Text("Notes"))
-                    .navigationBarItems(leading: SignOutButton())
+                    .navigationBarItems(leading: SignOutButton(),
+                                        trailing: Button(action: {
+                        self.showCreateNote.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                    })
+                }.sheet(isPresented: $showCreateNote) {
+                    AddNoteView(isPresented: self.$showCreateNote, userData: self.userData)
                 }
             } else {
                 SignInButton()
@@ -123,6 +136,44 @@ struct SignOutButton: View {
     var body: some View {
         Button(action: { Backend.shared.signOut() }) {
             Text("Sign Out")
+        }
+    }
+}
+
+struct AddNoteView: View {
+    @Binding var isPresented: Bool
+    var userData: UserData
+    
+    @State var name = "New Note"
+    @State var description = "This is a new note"
+    @State var imageName = "image"
+    
+    var body: some View {
+        Form {
+            Section(header: Text("TEXT")) {
+                TextField("Name", text: $name)
+                TextField("Name", text: $description)
+            }
+            
+            Section(header: Text("PICTURE")) {
+                TextField("Name", text: $imageName)
+            }
+            
+            Section {
+                Button(action: {
+                    self.isPresented = false
+                    let noteData = NoteData(id: UUID().uuidString, name: self.$name.wrappedValue, description: self.$description.wrappedValue)
+                    let note = Note(from: noteData)
+                    
+                    // asynchronously store the note (and assume it will succeed)
+                    Backend.shared.createNote(note: note)
+                    
+                    // add the new note in our userdata, this will refresh UI
+                    self.userData.notes.append(note)
+                }) {
+                    Text("Create this note")
+                }
+            }
         }
     }
 }
