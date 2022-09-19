@@ -97,6 +97,13 @@ class Backend {
         DispatchQueue.main.async() {
             let userData: UserData = .shared
             userData.isSingnedIn = status
+            
+            // when user is signed in, query the database, otherwise empty our model
+            if status {
+                self.queryNotes()
+            } else {
+                userData.notes = []
+            }
         }
     }
     
