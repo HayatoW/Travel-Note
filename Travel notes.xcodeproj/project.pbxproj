@@ -15,6 +15,7 @@
 		4A56228528D7F1B600202A0E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228328D7F1B600202A0E /* amplifyconfiguration.json */; };
 		4A56228628D7F1B600202A0E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A56228428D7F1B600202A0E /* awsconfiguration.json */; };
 		4A56228828D7F24700202A0E /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56228728D7F24700202A0E /* Backend.swift */; };
+		4A56228B28D7FA1400202A0E /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A56228228D7F0C600202A0E /* Amplify in Frameworks */,
+				4A56228B28D7FA1400202A0E /* AWSCognitoAuthPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,7 @@
 			name = "Travel notes";
 			packageProductDependencies = (
 				4A56228128D7F0C600202A0E /* Amplify */,
+				4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */,
 			);
 			productName = "Travel notes";
 			productReference = 4A56226C28D7EC6200202A0E /* Travel notes.app */;
@@ -127,6 +130,7 @@
 			mainGroup = 4A56226328D7EC6200202A0E;
 			packageReferences = (
 				4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				4A56228928D7FA1400202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
 			);
 			productRefGroup = 4A56226D28D7EC6200202A0E /* Products */;
 			projectDirPath = "";
@@ -367,6 +371,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4A56228928D7FA1400202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -374,6 +386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = Amplify;
+		};
+		4A56228A28D7FA1400202A0E /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSCognitoAuthPlugin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
