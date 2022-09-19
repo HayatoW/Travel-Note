@@ -99,4 +99,67 @@ class Backend {
             userData.isSingnedIn = status
         }
     }
+    
+    // MARK: API Access
+    
+    func queryNotes() {
+        _ = Amplify.API.query(request: .list(NoteData.self)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let notesData):
+                    print("Successfully retrieved list of Notes")
+                    
+                    // convert an array of NoteData to an array of Note class instances
+                    for noteData in notesData {
+                        let note = Note.init(from: noteData)
+                        DispatchQueue.main.async() {
+                            UserData.shared.notes.append(note)
+                        }
+                    }
+                    
+                case .failure(let error):
+                    print("Can not retrieve result: error \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Can not retrieve Notes: error \(error)")
+            }
+        }
+    }
+    
+    func createNote(note: Note) {
+        
+        // use note.data to access the NoteData instance
+        _ = Amplify.API.mutate(request: .create(note.data)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let data):
+                    print("Successfully created note: \(data)")
+                case .failure(let error):
+                    print("Got failed result with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event with error \(error)")
+            }
+        }
+    }
+    
+    func deleteNote(note: Note) {
+        
+        // use note.data to access the NoteData instance
+        _ = Amplify.API.mutate(request: .delete(note.data)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let data):
+                    print("Successfully deleted note: \(data)")
+                case .failure(let error):
+                    print("Got failed result with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event with error \(error)")
+            }
+        }
+    }
 }
