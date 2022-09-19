@@ -11,6 +11,7 @@
 		4A56227228D7EC6200202A0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56227128D7EC6200202A0E /* ContentView.swift */; };
 		4A56227428D7EC6200202A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227328D7EC6200202A0E /* Assets.xcassets */; };
 		4A56227728D7EC6200202A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A56227628D7EC6200202A0E /* Preview Assets.xcassets */; };
+		4A56228228D7F0C600202A0E /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56228128D7F0C600202A0E /* Amplify */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A56228228D7F0C600202A0E /* Amplify in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "Travel notes";
+			packageProductDependencies = (
+				4A56228128D7F0C600202A0E /* Amplify */,
+			);
 			productName = "Travel notes";
 			productReference = 4A56226C28D7EC6200202A0E /* Travel notes.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 4A56226328D7EC6200202A0E;
+			packageReferences = (
+				4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */,
+			);
 			productRefGroup = 4A56226D28D7EC6200202A0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A56228128D7F0C600202A0E /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A56228028D7F0C600202A0E /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = Amplify;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A56226428D7EC6200202A0E /* Project object */;
 }
